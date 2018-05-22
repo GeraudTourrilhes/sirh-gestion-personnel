@@ -18,8 +18,9 @@ public class EditerCollaborateurController extends HttpServlet{
 				resp.setContentType("text/html");
 				if(matriculeParam == null)
 				{
-					resp.setStatus(400);
-					resp.getWriter().write("Un matricule est attendu");
+					resp.sendError(400, "Un matricule est attendu");
+					/*resp.setStatus(400);
+					resp.getWriter().write("Un matricule est attendu");*/
 				}
 				else
 				{
@@ -39,35 +40,36 @@ public class EditerCollaborateurController extends HttpServlet{
 		String nomParam = req.getParameter("nom");
 		String prenomParam = req.getParameter("prenom");
 		resp.setContentType("text/html");
+		String texte = "Les paramètres suivant sont incorrecte : ";
 		if(matriculeParam == null || titreParam == null || nomParam == null || prenomParam == null)
 		{
-			resp.setStatus(400);
 			if(matriculeParam == null)
 			{
-				resp.getWriter().write("<p>Un matricule est attendu</p>");
+				texte += "matricule\n\r";
 			}
 			if(titreParam == null)
 			{
-				resp.getWriter().write("<p>Un titre est attendu</p>");
+				texte += "titre\n\r";
 			}
 			if(nomParam == null)
 			{
-				resp.getWriter().write("<p>Un nom est attendu</p>");
+				texte += "nom\n\r";
 			}
 			if(prenomParam == null)
 			{
-				resp.getWriter().write("<p>Un pr&eacute;nom est attendu</p>");
+				texte += "prénom\n\r";
 			}
+			
+			resp.sendError(400, texte);
 			
 		}
 		else
 		{
-			
 			resp.getWriter().write("<h1>Edition de collaborateur</h1>"
 					+ "<p>Matricule : " + matriculeParam +  " </p>"
 					+ "<p>Titre : " + titreParam +  " </p>"
 					+ "<p>Nom : " + nomParam +  " </p>"
-					+ "<p>Pr&eacute;nom : " + prenomParam +  " </p>");
+					+ "<p>Prénom : " + prenomParam +  " </p>");
 			resp.setStatus(201);
 		}
 		
