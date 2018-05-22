@@ -40,24 +40,25 @@ public class EditerCollaborateurController extends HttpServlet{
 		String nomParam = req.getParameter("nom");
 		String prenomParam = req.getParameter("prenom");
 		resp.setContentType("text/html");
+		resp.setCharacterEncoding("utf-8");
 		String texte = "Les paramètres suivant sont incorrecte : ";
 		if(matriculeParam == null || titreParam == null || nomParam == null || prenomParam == null)
 		{
 			if(matriculeParam == null)
 			{
-				texte += "matricule\n\r";
+				texte += "matricule ";
 			}
 			if(titreParam == null)
 			{
-				texte += "titre\n\r";
+				texte += "titre ";
 			}
 			if(nomParam == null)
 			{
-				texte += "nom\n\r";
+				texte += "nom ";
 			}
 			if(prenomParam == null)
 			{
-				texte += "prénom\n\r";
+				texte += "prénom ";
 			}
 			
 			resp.sendError(400, texte);
@@ -65,11 +66,13 @@ public class EditerCollaborateurController extends HttpServlet{
 		}
 		else
 		{
-			resp.getWriter().write("<h1>Edition de collaborateur</h1>"
+			resp.getWriter().write("<html><head> <meta charset=\"UTF-8\"> </head>"
+					+ "<body><h1>Edition de collaborateur</h1>"
 					+ "<p>Matricule : " + matriculeParam +  " </p>"
 					+ "<p>Titre : " + titreParam +  " </p>"
 					+ "<p>Nom : " + nomParam +  " </p>"
-					+ "<p>Prénom : " + prenomParam +  " </p>");
+					+ "<p>Prénom : " + prenomParam +  " </p>"
+							+ "<body><html>");
 			resp.setStatus(201);
 		}
 		

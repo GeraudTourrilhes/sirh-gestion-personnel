@@ -15,12 +15,14 @@ public class ListerCollaborateursController extends HttpServlet{
 			// recupere la valeur d&#39;un parametre dont le nom est departement
 			String departementParam = req.getParameter("departement");
 			resp.setContentType("text/html");
+			resp.setCharacterEncoding("utf-8");
 			// code HTML ecrit dans le corps de la reponse
-			resp.getWriter().write("<h1>Liste des collaborateurs</h1>"
+			resp.getWriter().write("<html><head> <meta charset=\"UTF-8\"> </head>"
+			+ "<h1>Liste des collaborateurs</h1>"
 			+ "<ul>"
 			+ "<li>avecPhoto="+ avecPhotoParam + "</li>"
 			+ "<li>departement="+ departementParam + "</li>"
-			+ "</ul>");
+			+ "</ul><body><html>");
 			
 	}
 	
