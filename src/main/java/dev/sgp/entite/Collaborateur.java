@@ -13,6 +13,8 @@ public class Collaborateur {
 	private String photo;
 	private ZonedDateTime dateHeureCreation;
 	private boolean actif;
+	private String intitulePoste;
+	private Departement departement;
 	public static int id = 1; 
 	
 	public Collaborateur(String matricule, String nom, String prenom, LocalDate ddn, String adresse, String numSecu,

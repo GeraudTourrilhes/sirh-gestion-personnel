@@ -1,13 +1,14 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap-4.1.1-dist/css/bootstrap.css">
-	<script src="<%=request.getContextPath()%>/bootstrap-4.1.1-dist/js/bootstrap.js"> </script>
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
+	<link rel="stylesheet" href="<c:url value='/bootstrap-4.1.1-dist/css/bootstrap.css'/>">
+	<script src="<c:url value='/bootstrap-4.1.1-dist/ks/bootstrap.ks'/>"> </script>
+	<link rel="stylesheet" href="<c:url value='/css/index.css'/>">
 
 
     <title>SGP App</title>
@@ -16,10 +17,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light nav-tabs">
 
-      <img class="mr-1" src="<%=request.getContextPath()%>/img/index.png" alt="Logo">
-       <a class="navbar-brand active" href="<%=request.getContextPath()%>/collaborateurs/lister">Collaborateurs</a>
-       <a class="navbar-brand" href="#">Statictiques</a>
-       <a class="navbar-brand" href="#">Activités</a>
+      <img class="mr-1" src="<c:url value='/img/index.png' />" alt="Logo">
+       <a class="navbar-brand active" href="<c:url value='/collaborateurs/lister' />">Collaborateurs</a>
+       <a class="navbar-brand" href="<c:url value='/statistiques/lister' />">Statistiques</a>
+       <a class="navbar-brand" href="#">ActivitÃ©s</a>
     </nav>
     <div class="container-fluid">
       <div class="row">
@@ -39,7 +40,7 @@
           <label for="prenom">Prenom</label>
           <input type="text" class="form-control" id="prenom" name="prenom">
           <div class="invalid-tooltip">
-            Le prénom est obligatoire!
+            Le prÃ©nom est obligatoire!
           </div>
         </div>
         <div class="form-group">
@@ -57,15 +58,15 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="numSecu">Numéro de sécurité sociale</label>
+          <label for="numSecu">NumÃ©ro de sÃ©curitÃ© sociale</label>
           <input type="text" class="form-control" id="numSecu" name="numSecu">
           <div class="invalid-tooltip">
-            Le numéro de sécurité sociale est obligatoire!
+            Le numÃ©ro de sÃ©curitÃ© sociale est obligatoire!
           </div>
         </div>
         
         <div class="row justify-content-end">
-          <button type="submit" class="btn btn-primary">Créer</button>
+          <button type="submit" class="btn btn-primary">CrÃ©er</button>
         </div>
 
       </form>
