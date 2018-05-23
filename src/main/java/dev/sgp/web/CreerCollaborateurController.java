@@ -1,5 +1,7 @@
 package dev.sgp.web;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
@@ -69,6 +71,11 @@ public class CreerCollaborateurController extends HttpServlet{
 		else
 		{
 			Properties properties = new Properties();
+			try{
+				properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("application.properties"));
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
 			String photo = req.getContextPath() + "/img/photo.png";
 			Boolean actif = true;
 			ZonedDateTime dateHeureCreation = ZonedDateTime.now();

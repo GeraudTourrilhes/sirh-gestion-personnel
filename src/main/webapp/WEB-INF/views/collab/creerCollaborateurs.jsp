@@ -65,35 +65,10 @@
         </div>
         
         <div class="row justify-content-end">
-          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Créer</button>
+          <button type="submit" class="btn btn-primary">Créer</button>
         </div>
 
       </form>
-
-      <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Création d'un collaborateur</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Vous êtes sur le point de créer un nouveau collaborateur:</p>
-              <p>Nom</p>
-              <p>Prénom</p>
-              <p>Date de naissance</p>
-              <p>Adresse</p>
-              <p>Numéro de sécurité sociale</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-              <button type="button" class="btn btn-primary">Confirmer</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </body>
